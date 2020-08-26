@@ -1,0 +1,15 @@
+#
+# Custom VPN status monitor, the script this launches will in turn launch another script
+#
+
+[Unit]
+Description=VPN Watcher
+After=network.target
+
+[Service]
+WorkingDirectory=/home/<username>
+ExecStart=/home/<username>/script-watcher.sh
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
